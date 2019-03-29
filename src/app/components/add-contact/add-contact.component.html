@@ -1,0 +1,58 @@
+<div class="contact-info-wrap edit-contact">
+    <div class="form-group profile-img">
+        <label for="file" (click)="clearImg($event)">
+            <span class="overlay"></span>
+          <mat-icon class="icon-upload" [class.clear]="checkImgExists">{{checkImgExists ? 'clear' : 'add_a_photo'}}</mat-icon>
+          <img *ngIf="checkImgExists" [src]="data?.imgUrl" />
+        </label>
+        <input type="file" *ngIf="!checkImgExists"
+               id="file" accept="image/*"
+               (change)="handleImgUpload($event.target.files)">
+    </div>
+  <div class="contact-info">
+    <div class="title">
+      <a class="icon" [routerLink]="['/']" routerLinkActive="router-link-active" >
+        <mat-icon>keyboard_return</mat-icon>
+      </a>  
+      <button class="icon" (click)="setFavorite()">
+        <mat-icon>{{ data?.favorite ? 'favorite' : 'favorite_outline' }}</mat-icon>
+      </button>
+    </div>
+    <div class="content">
+      <div class="content-row">
+        <h1>
+          <mat-icon>person_outline</mat-icon>
+          full name
+        </h1>
+        <div class="input-wrap">
+          <input type="text" class="form-input" [(ngModel)]="data.firstName" placeholder="First" />
+          <input type="text" class="form-input" [(ngModel)]="data.lastName" placeholder="Last" />
+        </div>
+      </div>
+      <div class="content-row">
+        <h1>
+          <mat-icon>mail_outline</mat-icon>
+          email
+        </h1>
+        <div class="input-wrap">
+          <input type="email" class="form-input" [(ngModel)]="data.email" />
+        </div>
+      </div>
+      <div class="content-row">
+        <h1><mat-icon>phone</mat-icon>numbers</h1>
+          <div class="phone-row" *ngFor="let item of data?.numbers; index as i">
+            <input type="text" class="form-input" [(ngModel)]="item.name" placeholder="Number" />
+            <input type="text" class="form-input" [(ngModel)]="item.label" placeholder="Title" />
+            <button (click)="removeNumber(i)"><mat-icon class="icon-btn-round">clear</mat-icon></button>
+          </div>
+        <div class="phone-row">
+          <button class="btn btn-blank" (click)="addNumber()"><mat-icon class="icon-btn-round">add</mat-icon>Add number</button>
+        </div>
+      </div>
+      <div class="content-row button-row">
+        <button class="btn btn-light" (click)="cancel()">Cancel</button>
+        <button class="btn btn-dark" (click)="submit()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

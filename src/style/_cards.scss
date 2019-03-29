@@ -1,0 +1,101 @@
+.contact-card {
+    position: relative;
+    border: 1px solid #E4E7E7;
+    max-width: 270px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    min-height: 107px;
+
+    &.new-card {
+        border-style: dashed;
+        text-decoration: none;
+        justify-content: center;
+
+        mat-icon {
+            font-weight: 300;
+            font-size: 30px;
+        }
+
+        h1 {
+            font-weight: 400;
+            font-size: 16px;
+            margin-top: .5rem;
+        }
+    }
+
+    h1 {
+        font-size: 1.125rem;
+        margin: .75rem 0 0 0;
+        color: #BBC4C3;
+    }
+
+    .portrait {
+        width: 60px;
+        height: 60px;
+        border: 3px solid #EAEDED;
+        border-radius: 50%;
+        margin-top: .25rem;
+    }
+
+    img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .icon {
+        position: absolute;
+        top: .75rem;
+        padding: 0;
+        margin: 0;
+
+        mat-icon {
+            height: 18px;
+            width: 18px;
+            font-size: 18px;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+
+        &.icon-favorite {
+            left: .75rem;
+        }
+
+        &.icon-delete {
+            right: .75rem;
+            display: none;
+        }
+
+        &.icon-edit {
+            right: 2.5rem;
+            display: none;
+        }
+    }
+
+    &:hover {
+        border-color: #2DA1AD;
+
+        h1 {
+            color: #2DA1AD;
+        }
+
+        mat-icon {
+            color: #2DA1AD !important;
+        }
+
+        .portrait {
+            border-color: #2DA1AD;
+        }
+
+        .icon-delete, .icon-edit {
+            display: block;
+        }
+    }
+}

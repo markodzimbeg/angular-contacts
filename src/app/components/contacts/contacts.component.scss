@@ -1,0 +1,7 @@
+@import '../../../style/grid';
+@import '../../../style/contacts';
+
+.grid {
+    @include create-grid(272px, 30px);
+}
+

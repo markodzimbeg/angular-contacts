@@ -1,0 +1,7 @@
+<div class="contact-card" (click)="onSelectContact()">
+  <button class="icon icon-favorite" (click)="onToggleFavorite($event)"><mat-icon>{{ data.favorite ? 'favorite' : 'favorite_outline' }}</mat-icon></button>
+  <a [routerLink]="['/contact/edit', data.id]" routerLinkActive="router-link-active"  class="icon icon-edit"><mat-icon>edit</mat-icon></a>
+  <button class="icon icon-delete" (click)="deleteContact($event)"><mat-icon>delete</mat-icon></button>
+  <span class="portrait"><img *ngIf="data?.imgUrl && data?.imgUrl.length" [src]="data.imgUrl" /></span>
+  <h1>{{ data.firstName }} {{ data.lastName }}</h1>
+</div>

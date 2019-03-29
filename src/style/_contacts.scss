@@ -1,0 +1,49 @@
+.contacts {
+    max-width: 1260px;
+    margin: 0 auto;
+
+    nav {
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        border-width: 2px;
+        height: 7.5rem;
+        align-items: center;
+
+        button {
+            font-size: 17px;
+        }
+    }
+
+    .search-wrap {
+        display: flex;
+        justify-content: center;
+        
+        .search-input{
+            flex-grow: .29;
+            flex-shrink: 2;
+            display: flex;
+            position: relative;
+            height: 11.25rem;
+
+            mat-icon {
+                position: absolute;
+                top: calc(50% - 13px);
+                left: 4px;
+            }
+
+            input {
+                width: calc(100% - 2rem);
+                font-size: 18px;
+                padding: 1.25rem 2rem 1.25rem 3rem;
+                margin: 57px -10px;
+                border: 1px solid #EAEAEA;
+                box-shadow: 0px 0px 60px 0px rgba(234,234,234,1);
+                border-radius: .25rem;
+                height: 20px;
+            }
+            
+        }
+    }
+}

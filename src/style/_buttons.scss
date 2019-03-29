@@ -1,0 +1,62 @@
+.icon {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4px;
+    margin: 0.5rem 0;
+    color: #BBC4C3;
+    border: 0;
+}
+
+button {
+    background: #fff;
+    border: 0;
+
+    &:focus {
+        outline:0;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    height: 42px;
+    border-radius: 21px;
+    width: 160px;
+    color: #fff;
+
+    &.btn-dark {
+        background: #2DA1AD;
+    }
+
+    &.btn-light {
+        background: #BBC4C3;
+    }
+
+    &.btn-blank {
+        color: #BBC4C3;
+        font-size: 18px;
+        font-weight: 600;
+
+        &.btn-selected {
+            color: #2DA1AD;
+        }
+    }
+
+    &.btn-blank:hover {
+        color: #2DA1AD;
+    }
+
+    &.btn-dark:hover, &.btn-light:hover {
+        opacity: .8;
+    }
+}
+
+.icon-btn-round {
+    position: initial;
+    border: 1px solid;
+    border-radius: 50%;
+    line-height: 28px !important;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+}

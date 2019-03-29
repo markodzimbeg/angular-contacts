@@ -1,0 +1,295 @@
+// Shared contact info styles 
+.contact-info-wrap {
+    max-width: 868px;
+    margin: 0 auto;
+    margin-top: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .contact-info {
+        flex-grow: 2;
+        margin: 0 1.75rem
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+        border: 3px solid #EAEDED;
+        border-radius: 50%;
+        display: block;
+        background: #ABD9DE;
+
+        mat-icon {
+            position: absolute;
+            top: calc(50% - 12px);
+            left: calc(50% - 12px);
+            color: #fff;
+            z-index: 2;
+        }
+
+        label {
+            width: 100%;
+            height: 100%;
+            display: block;
+            cursor: pointer;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    .title {
+        color: #BBC4C3;
+        display: flex;
+        border-bottom: 2px solid #BBC4C3;
+        height: 5.75rem;
+        align-items: center;
+
+        h1 {
+            margin: 0.5rem 1rem 1rem 0.5rem;
+            font-size: 24px;
+            flex-grow: 1;
+        }
+
+        .icon {
+            color: #BBC4C3;
+            border: 0;
+            margin-top: 1.75rem;
+            margin-left: 0.5rem;
+            height: 1.5rem;
+
+            &:hover {
+                background: rgb(241, 241, 241);
+            
+            }
+
+            & button {
+                margin-top: 1.25rem;
+            }
+        }
+    
+        button {
+            height: 31px !important;
+            background: #fff;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+        .content-row {
+            display: flex;
+            margin: 1rem 0;
+
+            div {
+                line-height: 24px;
+                flex-grow: 3;
+            }
+
+            h1 {
+                font-size: 1rem;
+                color: #2DA1AD;
+                padding-left: 2rem;
+                margin: 0;
+                position: relative;
+
+                mat-icon {
+                    cursor: default;
+                    width: 18px;
+                    height: 18px;
+                    font-size: 18px;
+                    line-height: 18px;
+                    color: #2DA1AD;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+
+            &.button-row {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }      
+    }
+}
+
+// Edit contact styles
+
+.edit-contact {
+    .title {
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+    
+    .content-row {
+        padding: 1rem 0;
+    
+        &:nth-child(1) {
+            padding-top: 0;
+        }
+        
+        flex-direction: column;
+        border-top: 2px solid;
+    
+        &:nth-child(1), &.button-row {
+            border: none;
+            margin-top: 0;
+        }
+    
+        h1 {
+            flex-basis: 2rem;
+            display: flex;
+            align-items: center;
+        }
+    
+        .input-wrap {
+            display: flex;
+            flex-wrap: wrap;
+    
+            input {
+                &:nth-child(1) {
+                    flex-basis: 254px;
+                }
+    
+                &:nth-child(2) {
+                    flex-basis: 250px;
+                    margin-right: 0;
+                }
+            }
+        }
+    
+        .phone-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+            input {
+               flex-grow: 1;
+               margin: .5rem 1.875rem .5rem 0;
+            }
+            
+            button {
+                font-size: 14px;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+    
+                &:hover {
+                    mat-icon {
+                        color: #2DA1AD;
+                    }
+                }
+            }
+        }
+    }
+    
+    label {
+        .icon-upload {
+            &.clear {
+                opacity: 0;
+            }
+        }
+    
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50%;
+            z-index: 1;
+            opacity: 0;
+        }
+    
+        img:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transition: all 0.8s;
+            opacity: 0;
+            background-size: 100% 100%;
+        }
+    
+        &:hover {
+            .icon-upload {
+                opacity: 1;
+            }
+    
+            img:before {
+                opacity: .8;
+              }
+    
+              .overlay {
+                  opacity: .6;
+              }
+        }
+    }    
+}
+
+// View contact style
+.view-contact {
+    .contact-info {
+        .title {
+            margin-bottom: 1rem;
+
+            h1 {
+                margin: 1rem;
+                margin-top: 1.75rem;
+            }
+        }
+        .content {
+            padding-top: 1rem;
+            max-width: 400px;
+
+            .content-row {
+                flex-wrap: wrap;
+                
+                div {
+                    line-height: 3.75rem;
+                    flex-basis: 50%;
+                }
+
+                h1{
+                    flex-basis: 6rem;
+                    line-height: 3.75rem;
+                    height: 3.75rem;
+
+                    mat-icon {
+                        line-height: 3.75rem;
+                    }
+                }
+    
+                .phone-row {
+                    display: flex;
+
+                    div {
+                        height: 3.75rem;
+                        font-size: 0.875rem;
+                        
+                        &:nth-child(1) {
+                            flex-basis: 30%;
+                            text-transform: uppercase;
+                        }
+                        &:nth-child(2) {
+                            flex-basis: 70%;
+                        }
+                    }
+                }
+    
+            }
+        }
+    }
+}

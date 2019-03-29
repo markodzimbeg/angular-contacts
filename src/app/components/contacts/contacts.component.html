@@ -1,0 +1,23 @@
+<div class="contacts">
+  <nav>
+    <button class="btn btn-blank" [class.btn-selected]="!isFavorites" (click)="toggleFavorites(false)">All contacts</button>
+    <span>|</span>
+    <button class="btn btn-blank" [class.btn-selected]="isFavorites" (click)="toggleFavorites(true)">My favorites</button>
+  </nav>
+  <div class="search-wrap">
+    <div class="search-input">
+      <input type="text" [(ngModel)]="filterQuery">
+      <mat-icon>search</mat-icon>
+    </div>
+  </div>
+  <div class="grid" [@contactFadeIn]="data?.length" *ngIf="!isFavorites">
+    <a routerLink="/contact/add" routerLinkActive="router-link-active"  class="contact-card new-card" *ngIf="!isFavorites">
+      <mat-icon>add</mat-icon>
+      <h1>Add new</h1>
+    </a>
+    <app-contact-card *ngFor="let item of data | filterContacts: filterQuery" [data]="item"></app-contact-card>
+  </div>
+  <div class="grid" [@contactFadeIn]="data?.length" *ngIf="isFavorites">
+      <app-contact-card *ngFor="let item of favorites | filterContacts: filterQuery" [data]="item"></app-contact-card>
+    </div>
+</div>
